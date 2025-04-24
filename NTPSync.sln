@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.9.34701.34
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NTPSync", "NTPSync.csproj", "{CE9797C0-8BA6-4932-A5DF-B672BF118E4B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{CE9797C0-8BA6-4932-A5DF-B672BF118E4B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CE9797C0-8BA6-4932-A5DF-B672BF118E4B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CE9797C0-8BA6-4932-A5DF-B672BF118E4B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CE9797C0-8BA6-4932-A5DF-B672BF118E4B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {2FA9474E-EA7A-4FF2-9DAF-7A1792A39F43}
+		RESX_PrefixTranslations = False
+	EndGlobalSection
+EndGlobal

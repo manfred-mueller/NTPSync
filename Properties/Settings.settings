@@ -1,0 +1,9 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="NTPSync.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="ntpServer" Type="System.String" Scope="User">
+      <Value Profile="(Default)">de.pool.ntp.org</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>
