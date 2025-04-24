@@ -5,9 +5,8 @@ on:
     branches:
       - master
     paths:
-      - 'bin/Release/**'  # Only run the workflow when files in this path are pushed
+      - 'bin/Release/**'
   workflow_dispatch:
-
 
 env:
   REPO_NAME: ${{ github.event.repository.name }}
@@ -56,7 +55,6 @@ jobs:
       - name: Read README.md
         id: read_readme
         run: |
-          # Read the README.md file and store its content in an environment variable
           echo "README_CONTENT<<EOF" >> $GITHUB_ENV
           cat README.md >> $GITHUB_ENV
           echo "EOF" >> $GITHUB_ENV
@@ -90,6 +88,7 @@ jobs:
           asset_content_type: application/octet-stream
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
       - name: Upload <reponame>-Setup-<version>.exe
         uses: actions/upload-release-asset@v1
         with:
@@ -99,3 +98,25 @@ jobs:
           asset_content_type: application/octet-stream
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+  update-winget:
+    runs-on: windows-latest
+    needs: create-release
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v3
+
+      - name: Set up wingetcreate
+        run: |
+          Invoke-WebRequest -Uri https://aka.ms/wingetcreate/latest -OutFile wingetcreate.exe
+          ./wingetcreate.exe --version
+
+      - name: Update winget manifest
+        run: |
+          ./wingetcreate.exe update `
+            -u "https://github.com/${{ github.repository }}/releases/download/${{ env.VERSION }}/${{ env.REPO_NAME }}-Setup-${{ env.VERSION }}.exe" `
+            -v "${{ env.VERSION }}" `
+            -s true
+        env:
+          WINGETCREATE_GITHUB_TOKEN: ${{ secrets.winget_update }}
