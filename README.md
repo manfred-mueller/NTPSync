@@ -1,3 +1,3 @@
-![XNPtime screenshot](/screenshot.png?raw=true "XNPtime screenshot")
+![NTPSync screenshot](/screenshot.png?raw=true "NTPSync screenshot")
 
-A simple tool to renew the public ip of a Fritz!Box
+A simple tray tool to sync the system time with NTP
